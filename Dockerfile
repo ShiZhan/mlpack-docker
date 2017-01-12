@@ -3,6 +3,7 @@ MAINTAINER Zhan.Shi <g.shizhan.g@gmail.com>
 
 RUN apt-get update && apt-get install -y wget \
         build-essential \
+        cmake \
         libboost-math-dev \
         libboost-program-options-dev \
         libboost-test-dev \
