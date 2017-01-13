@@ -17,4 +17,6 @@ RUN cd mlpack-2.1.1 && mkdir build && cd build && cmake -D DEBUG=OFF -D PROFILE=
 VOLUME /datasets
 WORKDIR /datasets
 
+ENV LD_LIBRARY_PATH /usr/local/lib
+
 CMD ["/sbin/init"]
