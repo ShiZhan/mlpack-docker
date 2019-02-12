@@ -12,8 +12,7 @@ RUN apt-get update && apt-get install -y wget \
         binutils-dev
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 RUN wget https://github.com/mlpack/mlpack/archive/mlpack-3.0.4.tar.gz && \
-    tar xzf https://github.com/mlpack/mlpack/archive/mlpack-3.0.4.tar.gz && \
-    rm https://github.com/mlpack/mlpack/archive/mlpack-3.0.4.tar.gz
+    tar xzf mlpack-3.0.4.tar.gz && rm mlpack-3.0.4.tar.gz
 
 RUN cd mlpack-mlpack-3.0.4 && mkdir build && cd build && \
     cmake -D DEBUG=OFF -D PROFILE=OFF ../ && \
