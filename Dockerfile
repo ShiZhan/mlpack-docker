@@ -11,8 +11,13 @@ RUN apt-get update && apt-get install -y wget \
         libarmadillo-dev \
         binutils-dev
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
-RUN wget http://www.mlpack.org/files/mlpack-2.1.1.tar.gz && tar xzf mlpack-2.1.1.tar.gz && rm mlpack-2.1.1.tar.gz
-RUN cd mlpack-2.1.1 && mkdir build && cd build && cmake -D DEBUG=OFF -D PROFILE=OFF ../ && make && make install && make clean
+RUN wget https://github.com/mlpack/mlpack/archive/mlpack-3.0.4.tar.gz && \
+    tar xzf https://github.com/mlpack/mlpack/archive/mlpack-3.0.4.tar.gz && \
+    rm https://github.com/mlpack/mlpack/archive/mlpack-3.0.4.tar.gz
+
+RUN cd mlpack-mlpack-3.0.4 && mkdir build && cd build && \
+    cmake -D DEBUG=OFF -D PROFILE=OFF ../ && \
+    make && make install && make clean
 
 VOLUME /datasets
 WORKDIR /datasets
